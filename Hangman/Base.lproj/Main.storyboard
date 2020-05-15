@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="139" y="139"/>
         </scene>
-        <!--Guess View Controller-->
+        <!--Guess A Letter-->
         <scene sceneID="YA5-pi-Nn5">
             <objects>
                 <viewController id="8Ky-Fe-Z3b" customClass="GuessViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="YWO-v7-sPt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qDB-oc-5vf"/>
+                    <navigationItem key="navigationItem" title="Guess A Letter" id="qDB-oc-5vf">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="kEd-Hg-kd9"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XH-c8-ktW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

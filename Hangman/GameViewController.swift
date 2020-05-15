@@ -9,10 +9,13 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    var game = Hangman()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print(game.word)
     }
 
 
