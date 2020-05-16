@@ -42,6 +42,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="guessButton" destination="yhl-Xd-N6F" id="uoM-za-71m"/>
+                        <outlet property="wordLabel" destination="cQj-3i-FpQ" id="yMY-BD-sMa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

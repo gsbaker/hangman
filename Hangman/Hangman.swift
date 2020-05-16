@@ -12,6 +12,20 @@ struct Hangman {
     var words: [String]
     var word: String
     var totalRounds: Int
+    var guessedLetters: [Character] = []
+    var formattedWord: String {
+        var guessedWord = ""
+        for letter in word {
+            if guessedLetters.contains(letter) {
+                guessedWord += "\(letter)"
+            } else {
+                guessedWord += "_"
+            }
+        }
+        
+        return guessedWord
+    }
+    
     
     init() {
         words = ["swift", "rain", "train", "map", "initialisation", "jazz"]
