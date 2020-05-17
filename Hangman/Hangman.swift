@@ -33,4 +33,8 @@ struct Hangman {
         totalRounds = words.count
     }
     
+    mutating func makeGuess(val: Character) {
+        guessedLetters.append(val)
+    }
+    
 }

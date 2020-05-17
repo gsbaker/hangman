@@ -29,7 +29,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Guess"/>
                                         <connections>
-                                            <segue destination="oE5-9C-tDR" kind="show" id="kGd-W0-dfz"/>
+                                            <segue destination="oE5-9C-tDR" kind="show" identifier="gameToNavigation" id="kGd-W0-dfz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -58,21 +58,334 @@
                     <view key="view" contentMode="scaleToFill" id="gdV-Gb-1af">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Vjj-gf-CYJ">
+                                <rect key="frame" x="57" y="154" width="300" height="534"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bqv-4E-tHF">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9P-wH-fYY">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="A"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="SKx-zY-fAu"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="TMS-Bf-fUp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHv-5e-4m4">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="B"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="LoB-gA-4WI"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="C6T-jg-1gt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvb-0f-F8a">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="KU3-oB-GmH"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="w0r-o3-afa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ED-wz-nt2" userLabel="D">
+                                                <rect key="frame" x="270" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="D"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="AoQ-Dw-nDg"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="vpJ-t0-Gfk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cZ0-CU-VJA">
+                                        <rect key="frame" x="0.0" y="82" width="300" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrX-m1-c2M">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="E"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="AKL-5g-5cc"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="cnR-tz-KoF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56V-9u-D8F">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="F"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="rUs-bT-jUE"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="Rb5-ws-Y61"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9o-gz-2L7">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="G"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="8rQ-JB-X2n"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="99A-VH-OeQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie8-bm-VJj">
+                                                <rect key="frame" x="270" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="H"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="C7F-wO-4ex"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="fng-Xu-qK1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="hHp-UQ-C3P">
+                                        <rect key="frame" x="0.0" y="164" width="300" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKT-NL-QFP">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="I"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="77R-2o-fuK"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="bcV-g6-IFK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYe-bm-VMJ">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="J"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="kyB-yM-GfU"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="Gac-1M-7ha"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yg1-3v-0yP">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="K"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="FrN-wI-EKM"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="ltl-dJ-u0S"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gs-bT-Y67">
+                                                <rect key="frame" x="270" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="L"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="U55-P1-ywt"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="xHm-QO-P4V"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="md1-AE-gAa">
+                                        <rect key="frame" x="0.0" y="246" width="300" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ip-lY-ES8">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="M"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="lx9-ab-V9u"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="vzJ-Vg-K1b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjp-Gt-kRf">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="N"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="t5F-32-uSx"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="8IX-Ar-KHT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egl-no-dmX">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="O"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="W2b-lu-dEV"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="tSQ-T8-xsX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJ8-B5-77Y">
+                                                <rect key="frame" x="270" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="P"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="fd1-ZF-SbL"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="pgs-z5-gUn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="wjb-oq-jA7">
+                                        <rect key="frame" x="0.0" y="328" width="300" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmM-OA-dSL">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Q"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="VJU-M4-cDg"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="uoP-A2-mdv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDL-Oi-WM7">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="R"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="B8V-ac-MLT"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="8FN-29-XBJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HS2-2a-1p7">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="S"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="Bl6-ed-WSW"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="8V6-kH-LPI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpa-Hb-uzf">
+                                                <rect key="frame" x="270" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="T"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="Xwz-C2-h3e"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="fJ5-nG-vdD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="qpC-Ql-zpn">
+                                        <rect key="frame" x="0.0" y="410" width="300" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovD-Pf-GSA">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="U"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="Osx-Nu-qhH"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="KYl-va-7zI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIz-6g-LAN">
+                                                <rect key="frame" x="90" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="V"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="sZY-qx-YxN"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="Di9-iE-jlE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZx-UN-NVF">
+                                                <rect key="frame" x="180" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="W"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="8OP-Yh-2GQ"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="pCo-Qh-Aa0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tt2-OH-wO5">
+                                                <rect key="frame" x="270" y="0.0" width="30" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="X"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="CQN-QR-EkF"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="1La-of-R5H"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZW3-4r-S30">
+                                        <rect key="frame" x="0.0" y="492" width="300" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DI-Rn-egJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Y"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="MsU-k1-JLm"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="xgt-fV-7Ww"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POB-RM-p0o">
+                                                <rect key="frame" x="150" y="0.0" width="150" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Z"/>
+                                                <connections>
+                                                    <action selector="letterButtonPressed:" destination="8Ky-Fe-Z3b" eventType="touchUpInside" id="Iic-at-cLU"/>
+                                                    <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="SlR-2N-vxQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Vjj-gf-CYJ" firstAttribute="centerY" secondItem="gdV-Gb-1af" secondAttribute="centerY" id="8pZ-or-Dm6"/>
+                            <constraint firstItem="Vjj-gf-CYJ" firstAttribute="centerX" secondItem="gdV-Gb-1af" secondAttribute="centerX" id="Jl5-Up-9h0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YWO-v7-sPt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Guess A Letter" id="qDB-oc-5vf">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="kEd-Hg-kd9"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ijm-or-HUz">
+                            <connections>
+                                <segue destination="l6n-vB-FzU" kind="unwind" unwindAction="unwindToGameViewController:" id="IRE-dr-R7s"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outletCollection property="letterButtons" destination="Y9P-wH-fYY" collectionClass="NSMutableArray" id="Mxr-kn-Kco"/>
+                        <outletCollection property="letterButtons" destination="FHv-5e-4m4" collectionClass="NSMutableArray" id="m4y-B8-dQy"/>
+                        <outletCollection property="letterButtons" destination="fvb-0f-F8a" collectionClass="NSMutableArray" id="Nug-eB-cQC"/>
+                        <outletCollection property="letterButtons" destination="0ED-wz-nt2" collectionClass="NSMutableArray" id="NFE-ZB-6eF"/>
+                        <outletCollection property="letterButtons" destination="Ie8-bm-VJj" collectionClass="NSMutableArray" id="25U-1c-ikK"/>
+                        <outletCollection property="letterButtons" destination="y9o-gz-2L7" collectionClass="NSMutableArray" id="x8t-rp-hVw"/>
+                        <outletCollection property="letterButtons" destination="56V-9u-D8F" collectionClass="NSMutableArray" id="j4U-Mv-gKE"/>
+                        <outletCollection property="letterButtons" destination="ZrX-m1-c2M" collectionClass="NSMutableArray" id="SK5-KC-czl"/>
+                        <outletCollection property="letterButtons" destination="8gs-bT-Y67" collectionClass="NSMutableArray" id="Jmk-py-G2l"/>
+                        <outletCollection property="letterButtons" destination="Yg1-3v-0yP" collectionClass="NSMutableArray" id="gs4-I3-XsG"/>
+                        <outletCollection property="letterButtons" destination="VYe-bm-VMJ" collectionClass="NSMutableArray" id="1nI-GX-xNm"/>
+                        <outletCollection property="letterButtons" destination="YKT-NL-QFP" collectionClass="NSMutableArray" id="0Ju-0n-5uE"/>
+                        <outletCollection property="letterButtons" destination="aJ8-B5-77Y" collectionClass="NSMutableArray" id="LSy-VZ-sGi"/>
+                        <outletCollection property="letterButtons" destination="egl-no-dmX" collectionClass="NSMutableArray" id="qEs-FB-naZ"/>
+                        <outletCollection property="letterButtons" destination="mjp-Gt-kRf" collectionClass="NSMutableArray" id="iCp-zW-YUG"/>
+                        <outletCollection property="letterButtons" destination="8ip-lY-ES8" collectionClass="NSMutableArray" id="rb2-rA-CvQ"/>
+                        <outletCollection property="letterButtons" destination="Rpa-Hb-uzf" collectionClass="NSMutableArray" id="cPb-Rj-fR4"/>
+                        <outletCollection property="letterButtons" destination="HS2-2a-1p7" collectionClass="NSMutableArray" id="pbx-Dp-3Qm"/>
+                        <outletCollection property="letterButtons" destination="mDL-Oi-WM7" collectionClass="NSMutableArray" id="89C-fV-kVX"/>
+                        <outletCollection property="letterButtons" destination="MmM-OA-dSL" collectionClass="NSMutableArray" id="C93-W8-bFi"/>
+                        <outletCollection property="letterButtons" destination="Tt2-OH-wO5" collectionClass="NSMutableArray" id="8Rt-Nd-jn8"/>
+                        <outletCollection property="letterButtons" destination="PZx-UN-NVF" collectionClass="NSMutableArray" id="KPs-va-sTe"/>
+                        <outletCollection property="letterButtons" destination="iIz-6g-LAN" collectionClass="NSMutableArray" id="MRM-EV-9PV"/>
+                        <outletCollection property="letterButtons" destination="ovD-Pf-GSA" collectionClass="NSMutableArray" id="w9x-Bp-kpT"/>
+                        <outletCollection property="letterButtons" destination="POB-RM-p0o" collectionClass="NSMutableArray" id="bII-nC-kUk"/>
+                        <outletCollection property="letterButtons" destination="6DI-Rn-egJ" collectionClass="NSMutableArray" id="Lpf-LP-vLZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2XH-c8-ktW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="l6n-vB-FzU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="136.60714285714286"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="gQw-MQ-CMl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oE5-9C-tDR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oE5-9C-tDR" customClass="NavigationViewController" customModule="Hangman" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="djb-4t-PtV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5aq-k5-k2G">
