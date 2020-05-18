@@ -28,7 +28,7 @@ class GuessViewController: UIViewController {
     
     func disableGuessedLetters(_ guessedLetters: [Character]) {
         if let buttons = letterButtons {
-            print("Hello world")
+//            print("Hello world")
             for button in buttons {
                 let stringButton = button.title(for: .normal)!
                 let characterButton = Character(stringButton.lowercased())

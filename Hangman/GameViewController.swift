@@ -12,6 +12,7 @@ class GameViewController: UIViewController {
     
     var game = Hangman()
     var guess: Character!
+    var won = false
     
     // MARK: - Outlets
     @IBOutlet weak var wordLabel: UILabel!
@@ -26,13 +27,22 @@ class GameViewController: UIViewController {
     }
     
     func updateUI() {
-        // create wordLabel
-        var letters = [String]()
-        for letter in game.formattedWord {
-            letters.append(String(letter))
+        if game.gameOver {
+            wordLabel.text = "No More Words. Game Finished"
+        } else {
+            if game.guessed {
+                game.nextWord()
+            }
+            // create wordLabel
+            var letters = [String]()
+            
+            for letter in game.formattedWord {
+                letters.append(String(letter))
+            }
+            
+            let wordWithSpacing = letters.joined(separator: " ")
+            wordLabel.text = wordWithSpacing
         }
-        let wordWithSpacing = letters.joined(separator: " ")
-        wordLabel.text = wordWithSpacing
     }
     
     
@@ -47,6 +57,7 @@ class GameViewController: UIViewController {
                 if let letterChosen = senderVC.letterPressed {
                     guess = letterChosen
                     game.makeGuess(val: guess)
+                    updateUI()
                 }
             }
         }
