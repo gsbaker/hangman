@@ -27,6 +27,7 @@ struct Hangman {
         
         return guessedWord
     }
+    var lives: Int
     var gameOver: Bool
     
     
@@ -37,12 +38,21 @@ struct Hangman {
         totalRounds = words.count
         guessedLetters = []
         guessed = false
+        lives = 8
         gameOver = false
     }
     
     mutating func makeGuess(val: Character) {
         guessedLetters.append(val)
-        print(guessedLetters)
+        
+        // decrease the number of lives if incorrect guess
+        if !word.contains(val) {
+            lives -= 1
+            if lives == 0 {
+                gameOver = true
+            }
+        }
+        
         // check if guessed
         if formattedWord == word {
             guessed = true

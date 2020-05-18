@@ -16,34 +16,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jbt-oW-wnu">
-                                <rect key="frame" x="171.5" y="402" width="71" height="92"/>
+                                <rect key="frame" x="142.5" y="397.5" width="129" height="101.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQj-3i-FpQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="71" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQj-3i-FpQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhl-Xd-N6F">
-                                        <rect key="frame" x="0.0" y="56" width="71" height="36"/>
+                                        <rect key="frame" x="0.0" y="65.5" width="129" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Guess"/>
+                                        <state key="normal" title="Guess A Letter"/>
                                         <connections>
                                             <segue destination="oE5-9C-tDR" kind="show" identifier="gameToNavigation" id="kGd-W0-dfz"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqd-bi-N8t">
+                                <rect key="frame" x="20" y="44" width="59.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="aqd-bi-N8t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9fK-3b-fkf"/>
                             <constraint firstItem="jbt-oW-wnu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LWE-b6-J61"/>
                             <constraint firstItem="jbt-oW-wnu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dVg-P3-aIm"/>
+                            <constraint firstItem="aqd-bi-N8t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fLY-es-TX2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="guessButton" destination="yhl-Xd-N6F" id="uoM-za-71m"/>
+                        <outlet property="livesLabel" destination="aqd-bi-N8t" id="qkm-gf-SNC"/>
                         <outlet property="wordLabel" destination="cQj-3i-FpQ" id="yMY-BD-sMa"/>
                     </connections>
                 </viewController>

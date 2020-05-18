@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var guessButton: UIButton!
+    @IBOutlet weak var livesLabel: UILabel!
     
 
     override func viewDidLoad() {
@@ -28,7 +29,13 @@ class GameViewController: UIViewController {
     
     func updateUI() {
         if game.gameOver {
-            wordLabel.text = "No More Words. Game Finished"
+            if game.lives > 0 {
+                wordLabel.text = "Game Completed!"
+                guessButton.isHidden = true
+            } else {
+                wordLabel.text = "Game Over..."
+                guessButton.isHidden = true
+            }
         } else {
             if game.guessed {
                 game.nextWord()
@@ -43,6 +50,7 @@ class GameViewController: UIViewController {
             let wordWithSpacing = letters.joined(separator: " ")
             wordLabel.text = wordWithSpacing
         }
+        livesLabel.text = "Lives: \(game.lives)"
     }
     
     
