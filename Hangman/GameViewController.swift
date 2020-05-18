@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var livesLabel: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var balloonImageView: UIImageView!
     
 
     override func viewDidLoad() {
@@ -30,13 +32,25 @@ class GameViewController: UIViewController {
     func updateUI() {
         if game.gameOver {
             if game.lives > 0 {
-                wordLabel.text = "Game Completed!"
-                guessButton.isHidden = true
+                wordLabel.text = "Completed!"
+                wordLabel.textColor = UIColor.green
+                livesLabel.isHidden = true
+                balloonImageView.isHidden = false
             } else {
-                wordLabel.text = "Game Over..."
-                guessButton.isHidden = true
+                wordLabel.text = "Game Over!"
+                balloonImageView.isHidden = true
+                wordLabel.textColor = UIColor.red
+                livesLabel.isHidden = true
             }
+            guessButton.isHidden = true
+            playAgainButton.isHidden = false
+            livesLabel.isHidden = true
         } else {
+            guessButton.isHidden = false
+            playAgainButton.isHidden = true
+            livesLabel.isHidden = false
+            balloonImageView.isHidden = true
+            wordLabel.textColor = nil
             if game.guessed {
                 game.nextWord()
             }
@@ -51,6 +65,16 @@ class GameViewController: UIViewController {
             wordLabel.text = wordWithSpacing
         }
         livesLabel.text = "Lives: \(game.lives)"
+    }
+    
+    
+    // MARK: - Actions:
+    @IBAction func playAgain(_ sender: Any) {
+        game.gameOver = false
+        game.lives = 8
+        game.usedWords = []
+        game.nextWord()
+        updateUI()
     }
     
     

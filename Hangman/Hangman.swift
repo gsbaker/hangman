@@ -32,7 +32,7 @@ struct Hangman {
     
     
     init() {
-        words = ["swift", "rain", "train", "map", "initialisation", "jazz"]
+        words = ["swift", "rain", "train", "map", "date", "jazz", "time", "rail", "twenty", "one", "fan", "mad", "dog", "cat", "mince"]
         usedWords = []
         word = words.randomElement()!
         totalRounds = words.count
@@ -57,6 +57,7 @@ struct Hangman {
         if formattedWord == word {
             guessed = true
             usedWords.append(word)
+            lives = 8 // reset lives
         }
     }
     
