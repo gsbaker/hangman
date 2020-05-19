@@ -35,7 +35,7 @@ struct Hangman {
         words = ["swift", "rain", "train", "map", "date", "jazz", "time", "rail", "twenty", "one", "fan", "mad", "dog", "cat", "mince"]
         usedWords = []
         word = words.randomElement()!
-        totalRounds = words.count
+        totalRounds = 5
         guessedLetters = []
         guessed = false
         lives = 8

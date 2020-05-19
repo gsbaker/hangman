@@ -15,11 +15,13 @@ class GameViewController: UIViewController {
     var won = false
     
     // MARK: - Outlets
-    @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var guessButton: UIButton!
     @IBOutlet weak var livesLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var mainActionButton: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
-    @IBOutlet weak var balloonImageView: UIImageView!
+    @IBOutlet weak var progressView: UIProgressView!
+    
     
 
     override func viewDidLoad() {
@@ -35,24 +37,28 @@ class GameViewController: UIViewController {
                 wordLabel.text = "Completed!"
                 wordLabel.textColor = UIColor.green
                 livesLabel.isHidden = true
-                balloonImageView.isHidden = false
+                imageView.isHidden = false
             } else {
-                wordLabel.text = "Game Over!"
-                balloonImageView.isHidden = true
+                wordLabel.text = game.word
+                imageView.isHidden = true
                 wordLabel.textColor = UIColor.red
                 livesLabel.isHidden = true
             }
-            guessButton.isHidden = true
+            mainActionButton.isHidden = true
             playAgainButton.isHidden = false
             livesLabel.isHidden = true
         } else {
-            guessButton.isHidden = false
+            mainActionButton.isHidden = false
             playAgainButton.isHidden = true
             livesLabel.isHidden = false
-            balloonImageView.isHidden = true
+            imageView.isHidden = true
             wordLabel.textColor = nil
             if game.guessed {
-                game.nextWord()
+                wordLabel.textColor = UIColor.green
+                mainActionButton.setTitle("Next Word", for: .normal)
+            } else {
+                wordLabel.textColor = nil
+                mainActionButton.setTitle("Guess A Letter", for: .normal)
             }
             // create wordLabel
             var letters = [String]()
@@ -65,10 +71,22 @@ class GameViewController: UIViewController {
             wordLabel.text = wordWithSpacing
         }
         livesLabel.text = "Lives: \(game.lives)"
+        progressView.isHidden = false
+        let progress = Float(game.usedWords.count) / Float(game.totalRounds)
+        progressView.setProgress(progress, animated: true)
     }
     
     
     // MARK: - Actions:
+    @IBAction func mainAction(_ sender: Any) {
+        if game.guessed {
+            game.nextWord()
+            updateUI()
+        } else {
+            performSegue(withIdentifier: "guessSegue", sender: nil)
+        }
+    }
+    
     @IBAction func playAgain(_ sender: Any) {
         game.gameOver = false
         game.lives = 8
@@ -76,7 +94,6 @@ class GameViewController: UIViewController {
         game.nextWord()
         updateUI()
     }
-    
     
     
     // MARK: - Navigation:
@@ -93,11 +110,10 @@ class GameViewController: UIViewController {
                 }
             }
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "gameToNavigation" {
+        if segue.identifier == "guessSegue" {
             let navigationVC = segue.destination as? NavigationViewController
             let guessVC = navigationVC?.viewControllers.first as? GuessViewController
             guessVC?.lettersToDisable = game.guessedLetters

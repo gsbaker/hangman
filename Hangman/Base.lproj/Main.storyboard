@@ -16,20 +16,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jbt-oW-wnu">
-                                <rect key="frame" x="123" y="283" width="129" height="101.5"/>
+                                <rect key="frame" x="139" y="280" width="97.5" height="107.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQj-3i-FpQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="129" height="45.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="97.5" height="45.5"/>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhl-Xd-N6F">
-                                        <rect key="frame" x="0.0" y="65.5" width="129" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Guess A Letter"/>
+                                        <rect key="frame" x="0.0" y="65.5" width="97.5" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Button"/>
                                         <connections>
-                                            <segue destination="oE5-9C-tDR" kind="show" identifier="gameToNavigation" id="kGd-W0-dfz"/>
+                                            <action selector="mainAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="21t-9d-F61"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-2f-RYq">
-                                <rect key="frame" x="20" y="404.5" width="335" height="48"/>
+                                <rect key="frame" x="20" y="407.5" width="335" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Play Again"/>
                                 <connections>
@@ -51,17 +51,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Balloons" translatesAutoresizingMaskIntoConstraints="NO" id="ANO-rP-Och">
                                 <rect key="frame" x="20" y="60" width="335" height="203"/>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPR-M4-ao0">
+                                <rect key="frame" x="36" y="605" width="303" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="aqd-bi-N8t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9fK-3b-fkf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aUM-2f-RYq" secondAttribute="trailing" constant="20" id="AYu-M7-Io0"/>
                             <constraint firstItem="ANO-rP-Och" firstAttribute="top" secondItem="aqd-bi-N8t" secondAttribute="bottom" constant="20" id="BSy-qG-tKj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cPR-M4-ao0" secondAttribute="trailing" constant="20" id="Foh-OQ-W2E"/>
                             <constraint firstItem="jbt-oW-wnu" firstAttribute="top" secondItem="ANO-rP-Och" secondAttribute="bottom" constant="20" id="Gqx-Bg-e5c"/>
                             <constraint firstItem="ANO-rP-Och" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KL8-gd-xuh"/>
                             <constraint firstItem="jbt-oW-wnu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LWE-b6-J61"/>
                             <constraint firstItem="aUM-2f-RYq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="M1a-Fp-8XX"/>
+                            <constraint firstItem="cPR-M4-ao0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="PeD-7f-M8w"/>
                             <constraint firstItem="aUM-2f-RYq" firstAttribute="top" secondItem="jbt-oW-wnu" secondAttribute="bottom" constant="20" id="Uvt-Fv-wGx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cPR-M4-ao0" secondAttribute="bottom" constant="60" id="WeH-NX-gD5"/>
                             <constraint firstItem="jbt-oW-wnu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dVg-P3-aIm"/>
                             <constraint firstItem="aqd-bi-N8t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fLY-es-TX2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ANO-rP-Och" secondAttribute="trailing" constant="20" id="qg2-YH-lYh"/>
@@ -69,11 +75,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="balloonImageView" destination="ANO-rP-Och" id="xlI-UO-fqm"/>
-                        <outlet property="guessButton" destination="yhl-Xd-N6F" id="uoM-za-71m"/>
+                        <outlet property="imageView" destination="ANO-rP-Och" id="xlI-UO-fqm"/>
                         <outlet property="livesLabel" destination="aqd-bi-N8t" id="qkm-gf-SNC"/>
+                        <outlet property="mainActionButton" destination="yhl-Xd-N6F" id="uoM-za-71m"/>
                         <outlet property="playAgainButton" destination="aUM-2f-RYq" id="ez2-hh-wLL"/>
+                        <outlet property="progressView" destination="cPR-M4-ao0" id="Nz5-xL-dqg"/>
                         <outlet property="wordLabel" destination="cQj-3i-FpQ" id="yMY-BD-sMa"/>
+                        <segue destination="oE5-9C-tDR" kind="show" identifier="guessSegue" id="eN0-Ek-5mZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
