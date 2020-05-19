@@ -36,13 +36,11 @@ class GameViewController: UIViewController {
             if game.lives > 0 {
                 wordLabel.text = "Completed!"
                 wordLabel.textColor = UIColor.green
-                livesLabel.isHidden = true
                 imageView.isHidden = false
+                imageView.image = UIImage(named: "Balloons")
             } else {
                 wordLabel.text = game.word
-                imageView.isHidden = true
                 wordLabel.textColor = UIColor.red
-                livesLabel.isHidden = true
             }
             mainActionButton.isHidden = true
             playAgainButton.isHidden = false
@@ -70,6 +68,14 @@ class GameViewController: UIViewController {
             let wordWithSpacing = letters.joined(separator: " ")
             wordLabel.text = wordWithSpacing
         }
+        
+        if game.lives < game.maxLives {
+            imageView.isHidden = false
+            let imageNumber = game.maxLives - game.lives
+            imageView.image = UIImage(named: "hangman-\(imageNumber)")
+        }
+        
+        
         livesLabel.text = "Lives: \(game.lives)"
         progressView.isHidden = false
         let progress = Float(game.usedWords.count) / Float(game.totalRounds)
@@ -80,8 +86,8 @@ class GameViewController: UIViewController {
     // MARK: - Actions:
     @IBAction func mainAction(_ sender: Any) {
         if game.guessed {
-            game.nextWord()
             updateUI()
+            game.nextWord()
         } else {
             performSegue(withIdentifier: "guessSegue", sender: nil)
         }

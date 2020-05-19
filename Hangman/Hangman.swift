@@ -28,6 +28,7 @@ struct Hangman {
         return guessedWord
     }
     var lives: Int
+    var maxLives: Int
     var gameOver: Bool
     
     
@@ -38,7 +39,8 @@ struct Hangman {
         totalRounds = 5
         guessedLetters = []
         guessed = false
-        lives = 8
+        maxLives = 8
+        lives = maxLives
         gameOver = false
     }
     
